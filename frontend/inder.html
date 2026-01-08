@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickBill – Simple & Smart Billing for Every Indian Business</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            qbprimary: '#2563EB',
+            qbprimaryLight: '#EFF6FF',
+            qbaccent: '#16A34A',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+  <!-- Top Accent Bar (subtle Indian vibe) -->
+  <div class="w-full h-1 bg-gradient-to-r from-orange-400 via-amber-300 to-emerald-500"></div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-2xl bg-qbprimaryLight flex items-center justify-center shadow-sm">
+            <span class="font-bold text-qbprimary text-lg">Q</span>
+          </div>
+          <div class="flex flex-col leading-tight">
+            <span class="font-semibold text-lg text-slate-900">QuickBill</span>
+            <span class="text-[11px] text-slate-500">Smart Billing Made Simple</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#home" class="text-slate-600 hover:text-qbprimary transition-colors">Home</a>
+          <a href="#features" class="text-slate-600 hover:text-qbprimary transition-colors">Features</a>
+          <a href="#pricing" class="text-slate-600 hover:text-qbprimary transition-colors">Pricing</a>
+          <a href="#contact" class="text-slate-600 hover:text-qbprimary transition-colors">Contact</a>
+        </nav>
+
+        <!-- Desktop Buttons -->
+        <div class="hidden md:flex items-center gap-3">
+          <a href="#login" class="text-sm font-medium text-slate-600 hover:text-qbprimary transition-colors">
+            Login
+          </a>
+          <a href="#register"
+             class="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-semibold bg-qbprimary text-white shadow-sm hover:bg-blue-600 transition-colors">
+            Register Free
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuToggle"
+                class="md:hidden inline-flex items-center justify-center p-2 rounded-full border border-slate-200 hover:bg-slate-100 transition">
+          <span class="sr-only">Open menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="md:hidden hidden pb-4 border-t border-slate-200">
+        <nav class="flex flex-col gap-2 pt-3 text-sm font-medium">
+          <a href="#home" class="py-1 text-slate-700 hover:text-qbprimary">Home</a>
+          <a href="#features" class="py-1 text-slate-700 hover:text-qbprimary">Features</a>
+          <a href="#pricing" class="py-1 text-slate-700 hover:text-qbprimary">Pricing</a>
+          <a href="#contact" class="py-1 text-slate-700 hover:text-qbprimary">Contact</a>
+        </nav>
+        <div class="mt-3 flex items-center gap-3">
+          <a href="#login" class="text-sm font-medium text-slate-700 hover:text-qbprimary">
+            Login
+          </a>
+          <a href="#register"
+             class="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-semibold bg-qbprimary text-white shadow-sm hover:bg-blue-600 transition-colors">
+            Register Free
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="pt-10 pb-16 sm:pt-14 sm:pb-20 bg-gradient-to-b from-qbprimaryLight/60 to-slate-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <!-- Text -->
+        <div>
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white shadow-sm border border-slate-200 text-xs font-medium text-slate-600 mb-4">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            Trusted billing for Indian shops & businesses
+          </span>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+            Simple &amp; Smart Billing Software
+            <span class="block text-qbprimary">for Every Indian Business</span>
+          </h1>
+
+          <p class="mt-4 text-sm sm:text-base text-slate-600 max-w-xl">
+            Manage invoices, products, stock, customers, staff and GST-ready reports
+            from one clean dashboard — built for kirana stores, wholesalers,
+            medical shops, and growing businesses.
+          </p>
+
+          <!-- Hero CTAs -->
+          <div class="mt-6 flex flex-wrap items-center gap-4">
+            <a id="register"
+               href="#pricing"
+               class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-semibold bg-qbprimary text-white shadow-md hover:bg-blue-600 transition-transform hover:-translate-y-0.5">
+              Get Started Free
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="M13 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#pricing"
+               class="inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-semibold border border-slate-300 text-slate-800 bg-white hover:border-qbprimary hover:text-qbprimary transition-colors">
+              View Pricing
+            </a>
+          </div>
+
+          <!-- Small trust badges -->
+          <div class="mt-6 flex flex-wrap gap-4 text-xs text-slate-500">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+              <span>GST-ready invoices</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+              <span>Works online &amp; offline*</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+              <span>WhatsApp/SMS invoice ready</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Illustration -->
+        <div class="relative">
+          <div
+            class="rounded-3xl bg-white shadow-xl border border-slate-200 p-4 sm:p-6 lg:p-7 max-w-md mx-auto">
+            <!-- Header of fake dashboard -->
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <p class="text-xs font-medium text-slate-500 uppercase tracking-wide">
+                  Today’s Overview
+                </p>
+                <p class="text-lg font-semibold text-slate-900">QuickBill Dashboard</p>
+              </div>
+              <span
+                class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium bg-emerald-50 text-emerald-700">
+                Live
+              </span>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-3 mb-4">
+              <div class="rounded-2xl bg-qbprimaryLight px-3 py-3">
+                <p class="text-[11px] text-slate-500">Today’s Sales</p>
+                <p class="text-sm font-semibold text-slate-900">₹18,450</p>
+                <p class="text-[10px] text-emerald-600 mt-1">↑ 23% vs yesterday</p>
+              </div>
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 px-3 py-3">
+                <p class="text-[11px] text-slate-500">Invoices</p>
+                <p class="text-sm font-semibold text-slate-900">37</p>
+                <p class="text-[10px] text-slate-500 mt-1">5 pending</p>
+              </div>
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 px-3 py-3">
+                <p class="text-[11px] text-slate-500">Low Stock</p>
+                <p class="text-sm font-semibold text-amber-600">12 items</p>
+                <p class="text-[10px] text-slate-500 mt-1">Restock soon</p>
+              </div>
+            </div>
+
+            <!-- Fake chart -->
+            <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3 mb-4">
+              <div class="flex items-center justify-between mb-1">
+                <p class="text-xs font-medium text-slate-600">Weekly Sales</p>
+                <p class="text-[11px] text-slate-500">₹1,02,300</p>
+              </div>
+              <div class="flex items-end gap-1 h-20">
+                <div class="flex-1 bg-qbprimaryLight rounded-t-lg" style="height: 40%;"></div>
+                <div class="flex-1 bg-qbprimaryLight rounded-t-lg" style="height: 55%;"></div>
+                <div class="flex-1 bg-qbprimaryLight rounded-t-lg" style="height: 70%;"></div>
+                <div class="flex-1 bg-qbprimary rounded-t-lg" style="height: 100%;"></div>
+                <div class="flex-1 bg-qbprimaryLight rounded-t-lg" style="height: 65%;"></div>
+                <div class="flex-1 bg-qbprimaryLight rounded-t-lg" style="height: 45%;"></div>
+                <div class="flex-1 bg-qbprimaryLight rounded-t-lg" style="height: 60%;"></div>
+              </div>
+              <div class="flex justify-between mt-1 text-[10px] text-slate-400">
+                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+              </div>
+            </div>
+
+            <!-- Staff activity -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="flex -space-x-2">
+                  <div class="w-7 h-7 rounded-full bg-qbprimaryLight flex items-center justify-center text-[11px] font-semibold text-qbprimary border border-white">
+                    AK
+                  </div>
+                  <div class="w-7 h-7 rounded-full bg-emerald-50 flex items-center justify-center text-[11px] font-semibold text-emerald-700 border border-white">
+                    RS
+                  </div>
+                </div>
+                <p class="text-[11px] text-slate-500">
+                  2 staff billing right now
+                </p>
+              </div>
+              <button
+                class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium border border-slate-200 text-slate-700 bg-white hover:border-qbprimary hover:text-qbprimary transition-colors">
+                Open POS
+              </button>
+            </div>
+          </div>
+
+          <!-- Floating badge -->
+          <div
+            class="absolute -bottom-4 -left-2 sm:-left-4 bg-white border border-slate-200 shadow-md rounded-2xl px-3 py-2 flex items-center gap-2">
+            <div class="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center">
+              <svg class="w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-[11px] font-medium text-slate-800">Bills in seconds</p>
+              <p class="text-[10px] text-slate-500">No Excel. No confusion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-14 sm:py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
+              Powerful features, <span class="text-qbprimary">built for small shops</span>
+            </h2>
+            <p class="mt-2 text-sm text-slate-600 max-w-xl">
+              Everything you need to run billing smoothly — without complicated screens or training.
+            </p>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-500">
+            From kirana to wholesale – QuickBill adapts to your business style.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Feature Card -->
+          <div class="rounded-2xl bg-white border border-slate-200 shadow-sm p-4 sm:p-5 hover:shadow-md transition-shadow">
+            <div class="w-9 h-9 rounded-xl bg-qbprimaryLight flex items-center justify-center mb-3">
+              <!-- Icon: Box -->
+              <svg class="w-5 h-5 text-qbprimary" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3.3 7.75 12 12.5l8.7-4.75M12 21.25v-8.75" stroke="currentColor"
+                      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-slate-900">Product Management</h3>
+            <p class="mt-1.5 text-sm text-slate-600">
+              Add items with GST, MRP, purchase price and stock in a clean, Excel-free interface.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-white border border-slate-200 shadow-sm p-4 sm:p-5 hover:shadow-md transition-shadow">
+            <div class="w-9 h-9 rounded-xl bg-qbprimaryLight flex items-center justify-center mb-3">
+              <!-- Icon: Invoice -->
+              <svg class="w-5 h-5 text-qbprimary" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 3h8a2 2 0 0 1 2 2v14l-4-2-4 2-4-2V5a2 2 0 0 1 2-2Z"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 8h6M9 12h3" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-slate-900">Billing &amp; Invoicing</h3>
+            <p class="mt-1.5 text-sm text-slate-600">
+              Create professional GST invoices in a few taps, with discount and tax options.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-white border border-slate-200 shadow-sm p-4 sm:p-5 hover:shadow-md transition-shadow">
+            <div class="w-9 h-9 rounded-xl bg-qbprimaryLight flex items-center justify-center mb-3">
+              <!-- Icon: Stock -->
+              <svg class="w-5 h-5 text-qbprimary" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 19V9a2 2 0 0 1 2-2h3v12" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10 19V5h4v14" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16 19V11h2a2 2 0 0 1 2 2v6" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-slate-900">Stock Tracking</h3>
+            <p class="mt-1.5 text-sm text-slate-600">
+              Auto-adjust stock after each bill, and get alerts before items go out of stock.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-white border border-slate-200 shadow-sm p-4 sm:p-5 hover:shadow-md transition-shadow">
+            <div class="w-9 h-9 rounded-xl bg-qbprimaryLight flex items-center justify-center mb-3">
+              <!-- Icon: Users -->
+              <svg class="w-5 h-5 text-qbprimary" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor"
+                      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17 3a3 3 0 0 1 0 6" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-slate-900">Customer History</h3>
+            <p class="mt-1.5 text-sm text-slate-600">
+              See who bought what, outstanding amounts, and repeat customers in one place.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-white border border-slate-200 shadow-sm p-4 sm:p-5 hover:shadow-md transition-shadow">
+            <div class="w-9 h-9 rounded-xl bg-qbprimaryLight flex items-center justify-center mb-3">
+              <!-- Icon: Shield -->
+              <svg class="w-5 h-5 text-qbprimary" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3 5 6v6c0 4.1 2.6 7.8 7 9 4.4-1.2 7-4.9 7-9V6l-7-3Z"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12.5 11 14.5 15 10.5" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-slate-900">Staff Permissions</h3>
+            <p class="mt-1.5 text-sm text-slate-600">
+              Create admin &amp; staff roles so only trusted people can see reports or edit items.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-white border border-slate-200 shadow-sm p-4 sm:p-5 hover:shadow-md transition-shadow">
+            <div class="w-9 h-9 rounded-xl bg-qbprimaryLight flex items-center justify-center mb-3">
+              <!-- Icon: Chart -->
+              <svg class="w-5 h-5 text-qbprimary" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 19V5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                <path d="M4 19H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                <path d="M8 15L11 11L14 13L18 8" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18 8H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-slate-900">Dashboard &amp; Reports</h3>
+            <p class="mt-1.5 text-sm text-slate-600">
+              Daily sales, top products, tax summary — everything ready for CA and GST filing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose QuickBill -->
+    <section class="py-14 sm:py-16 bg-qbprimaryLight/70">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
+            Why shop owners <span class="text-qbprimary">love QuickBill</span>
+          </h2>
+          <p class="mt-3 text-sm text-slate-600 max-w-xl">
+            Designed for Indian shops — whether you run a medical store in Mumbai, a kirana in Delhi,
+            or a wholesale shop in a small town.
+          </p>
+
+          <div class="mt-5 space-y-3">
+            <div class="flex gap-3">
+              <div class="mt-1 w-7 h-7 rounded-full bg-white flex items-center justify-center shadow-sm">
+                <svg class="w-4 h-4 text-qbaccent" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-900">Works offline + online</p>
+                <p class="text-sm text-slate-600">
+                  Continue billing even if the internet drops. Sync data when you’re back online.*
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="mt-1 w-7 h-7 rounded-full bg-white flex items-center justify-center shadow-sm">
+                <svg class="w-4 h-4 text-qbaccent" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-900">Easy for shop owners</p>
+                <p class="text-sm text-slate-600">
+                  Clean Hindi/English friendly interface. Staff can learn in a single day.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="mt-1 w-7 h-7 rounded-full bg-white flex items-center justify-center shadow-sm">
+                <svg class="w-4 h-4 text-qbaccent" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-900">GST-ready billing</p>
+                <p class="text-sm text-slate-600">
+                  Proper HSN/SAC support, tax breakup and export so your CA is always happy.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="mt-1 w-7 h-7 rounded-full bg-white flex items-center justify-center shadow-sm">
+                <svg class="w-4 h-4 text-qbaccent" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-900">WhatsApp/SMS invoice support</p>
+                <p class="text-sm text-slate-600">
+                  Share bills instantly on WhatsApp or SMS — no more paper slip confusion.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="mt-1 w-7 h-7 rounded-full bg-white flex items-center justify-center shadow-sm">
+                <svg class="w-4 h-4 text-qbaccent" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-900">Admin + Staff roles</p>
+                <p class="text-sm text-slate-600">
+                  Owner controls everything. Staff can only bill or see what you allow.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="mt-1 w-7 h-7 rounded-full bg-white flex items-center justify-center shadow-sm">
+                <svg class="w-4 h-4 text-qbaccent" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-900">Secure &amp; fast</p>
+                <p class="text-sm text-slate-600">
+                  Safe login, staff access control and optimized billing for busy hours.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extra card -->
+        <div>
+          <div class="rounded-3xl bg-white shadow-xl border border-slate-200 p-5 sm:p-6">
+            <h3 class="text-base font-semibold text-slate-900 mb-3">
+              See how QuickBill fits in your daily flow
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex gap-2">
+                <span class="mt-1 w-1.5 h-1.5 rounded-full bg-qbprimary"></span>
+                <span>Morning – check yesterday’s sales &amp; low stock items.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="mt-1 w-1.5 h-1.5 rounded-full bg-qbprimary"></span>
+                <span>Daytime – staff generates bills with your set discounts &amp; prices.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="mt-1 w-1.5 h-1.5 rounded-full bg-qbprimary"></span>
+                <span>Evening – owner reviews dashboard from mobile or laptop.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="mt-1 w-1.5 h-1.5 rounded-full bg-qbprimary"></span>
+                <span>Month-end – export reports for CA &amp; suppliers in one click.</span>
+              </li>
+            </ul>
+
+            <div class="mt-5 rounded-2xl bg-qbprimaryLight p-3 flex items-center justify-between text-xs sm:text-sm">
+              <div>
+                <p class="font-semibold text-slate-900">Ready to modernize your billing?</p>
+                <p class="text-slate-600">Start free today, upgrade only when you grow.</p>
+              </div>
+              <a href="#pricing"
+                 class="hidden sm:inline-flex items-center px-3 py-2 rounded-full text-xs font-semibold bg-qbprimary text-white hover:bg-blue-600 transition-colors">
+                View Plans
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-14 sm:py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
+            Simple pricing <span class="text-qbprimary">for every stage</span>
+          </h2>
+          <p class="mt-2 text-sm text-slate-600 max-w-2xl mx-auto">
+            Start free for your small shop and upgrade as your business grows.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Free Plan -->
+          <div class="rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col">
+            <div class="p-5 sm:p-6 flex-1 flex flex-col">
+              <p class="text-xs font-semibold text-emerald-600 mb-1">Starter</p>
+              <h3 class="text-lg font-semibold text-slate-900">Free Plan</h3>
+              <p class="mt-1 text-sm text-slate-600 flex-1">
+                Perfect for new shops trying digital billing for the first time.
+              </p>
+              <p class="mt-4 text-2xl font-bold text-slate-900">₹0
+                <span class="text-xs font-normal text-slate-500">/month</span>
+              </p>
+              <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                <li class="flex gap-2">
+                  <span class="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>100 invoices / month</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>Basic sales reports</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>Add &amp; manage products</span>
+                </li>
+              </ul>
+            </div>
+            <div class="p-5 sm:p-6 border-t border-slate-100">
+              <button
+                data-modal-target="free-modal"
+                class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-semibold border border-slate-300 text-slate-800 bg-white hover:border-qbprimary hover:text-qbprimary transition-colors">
+                See Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Basic Plan -->
+          <div class="rounded-3xl border border-qbprimary bg-white shadow-md ring-1 ring-qbprimary/10 flex flex-col scale-100 md:scale-[1.02]">
+            <div class="p-5 sm:p-6 flex-1 flex flex-col">
+              <div class="flex items-center justify-between">
+                <p class="text-xs font-semibold text-qbprimary mb-1">Most Popular</p>
+                <span class="px-2 py-1 rounded-full text-[10px] font-semibold bg-qbprimaryLight text-qbprimary">
+                  Ideal for growing shops
+                </span>
+              </div>
+              <h3 class="text-lg font-semibold text-slate-900">Basic Plan</h3>
+              <p class="mt-1 text-sm text-slate-600 flex-1">
+                For busy shops that need unlimited billing and customer tracking.
+              </p>
+              <p class="mt-4 text-2xl font-bold text-slate-900">₹299
+                <span class="text-xs font-normal text-slate-500">/month</span>
+              </p>
+              <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                <li class="flex gap-2">
+                  <span class="mt-1 w-1.5 h-1.5 rounded-full bg-qbprimary"></span>
+                  <span>Unlimited invoices</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1 w-1.5 h-1.5 rounded-full bg-qbprimary"></span>
+                  <span>Customer history &amp; ledger</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1 w-1.5 h-1.5 rounded-full bg-qbprimary"></span>
+                  <span>Product analytics &amp; top-seller view</span>
+                </li>
+              </ul>
+            </div>
+            <div class="p-5 sm:p-6 border-t border-slate-100">
+              <button
+                data-modal-target="basic-modal"
+                class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-semibold bg-qbprimary text-white hover:bg-blue-600 transition-colors shadow-sm">
+                See Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Advanced Plan -->
+          <div class="rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col">
+            <div class="p-5 sm:p-6 flex-1 flex flex-col">
+              <p class="text-xs font-semibold text-slate-800 mb-1">For power users</p>
+              <h3 class="text-lg font-semibold text-slate-900">Advanced Plan</h3>
+              <p class="mt-1 text-sm text-slate-600 flex-1">
+                Best for multi-staff shops, franchises and serious wholesalers.
+              </p>
+              <p class="mt-4 text-2xl font-bold text-slate-900">₹599
+                <span class="text-xs font-normal text-slate-500">/month</span>
+              </p>
+              <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                <li class="flex gap-2">
+                  <span class="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>Staff management &amp; roles</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>WhatsApp/SMS invoice integration</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>Advanced dashboard &amp; PDF export</span>
+                </li>
+              </ul>
+            </div>
+            <div class="p-5 sm:p-6 border-t border-slate-100">
+              <button
+                data-modal-target="advanced-modal"
+                class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-semibold border border-slate-300 text-slate-800 bg-white hover:border-qbprimary hover:text-qbprimary transition-colors">
+                See Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-12 sm:py-14 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
+            What shop owners are saying
+          </h2>
+          <p class="mt-2 text-sm text-slate-600">
+            QuickBill is built with feedback from real Indian businesses.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5 shadow-sm">
+            <p class="text-sm text-slate-700">
+              “QuickBill made our shop billing super fast! No more manual cashbook
+              and our staff loves it.”
+            </p>
+            <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+              <span>Kirana Store, Pune</span>
+              <span>Using Basic Plan</span>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5 shadow-sm">
+            <p class="text-sm text-slate-700">
+              “Earlier, month-end was a headache. Now I export reports and send to CA
+              in two minutes.”
+            </p>
+            <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+              <span>Electronics Dealer, Surat</span>
+              <span>Using Advanced Plan</span>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5 shadow-sm">
+            <p class="text-sm text-slate-700">
+              “My staff can bill while I’m travelling. I just check dashboard on mobile
+              at night.”
+            </p>
+            <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+              <span>Wholesale Trader, Delhi</span>
+              <span>Using Basic Plan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section id="contact" class="py-12 sm:py-14 bg-slate-900">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">
+              Ready to modernize your shop billing?
+            </h2>
+            <p class="mt-2 text-sm text-slate-300 max-w-xl">
+              Start with the Free Plan and upgrade when your business needs more.
+              No credit card required to try.
+            </p>
+
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a href="#pricing"
+                 class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-slate-900 hover:bg-slate-100 transition-colors">
+                Get Started Free
+              </a>
+              <a href="#"
+                 class="inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-semibold border border-slate-600 text-slate-200 hover:border-slate-400 transition-colors">
+                Talk to our team
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div class="rounded-2xl bg-slate-800 border border-slate-700 p-5 sm:p-6">
+              <h3 class="text-sm font-semibold text-white mb-3">Contact &amp; Support</h3>
+              <div class="space-y-3 text-sm text-slate-300">
+                <p>Email: support@quickbill.in</p>
+                <p>Phone / WhatsApp: +91-98XX-XXX-XXX</p>
+                <p>Support Hours: 10am – 7pm (Mon–Sat)</p>
+              </div>
+              <form class="mt-4 space-y-3">
+                <div>
+                  <label class="block text-xs font-medium text-slate-400 mb-1">Your Name</label>
+                  <input type="text" class="w-full rounded-xl border border-slate-600 bg-slate-900 text-sm text-slate-100 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-qbprimary focus:border-qbprimary" placeholder="Shop owner / manager name" />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-400 mb-1">Mobile or Email</label>
+                  <input type="text" class="w-full rounded-xl border border-slate-600 bg-slate-900 text-sm text-slate-100 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-qbprimary focus:border-qbprimary" placeholder="We will contact you back" />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-400 mb-1">Message</label>
+                  <textarea rows="3"
+                            class="w-full rounded-xl border border-slate-600 bg-slate-900 text-sm text-slate-100 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-qbprimary focus:border-qbprimary"
+                            placeholder="Tell us about your shop or question"></textarea>
+                </div>
+                <button type="button"
+                        class="inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-semibold bg-qbprimary text-white hover:bg-blue-600 transition-colors w-full">
+                  Request Callback
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white py-6">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-600">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="font-semibold text-slate-900">QuickBill</p>
+          <p class="text-xs text-slate-500 mt-1">
+            About: Simple billing &amp; inventory software for Indian shops and growing businesses.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="hover:text-qbprimary">Download / Contact</a>
+          <a href="#" class="hover:text-qbprimary">Terms</a>
+          <a href="#" class="hover:text-qbprimary">Privacy</a>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-slate-400">
+        © QuickBill 2025. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Pricing Modals -->
+  <!-- Free Modal -->
+  <div id="free-modal"
+       class="fixed inset-0 bg-black/40 flex items-center justify-center px-4 z-40 hidden">
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl border border-slate-200 p-5 sm:p-6 relative">
+      <button data-modal-close
+              class="absolute top-3 right-3 p-1 rounded-full hover:bg-slate-100">
+        <svg class="w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M6 18L18 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </button>
+      <h3 class="text-lg font-semibold text-slate-900 mb-1">Free Plan – ₹0/month</h3>
+      <p class="text-sm text-slate-600 mb-3">
+        Best for new shops testing digital billing or seasonal businesses.
+      </p>
+      <ul class="space-y-2 text-sm text-slate-700 mb-4">
+        <li>• 100 invoices per month</li>
+        <li>• Add unlimited products</li>
+        <li>• Basic daily & monthly sales reports</li>
+        <li>• Single-device access</li>
+        <li>• Standard GST invoice formats</li>
+        <li>• Email support</li>
+      </ul>
+      <button data-modal-close
+              class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-semibold bg-qbprimary text-white hover:bg-blue-600 transition-colors">
+        Start with Free Plan
+      </button>
+    </div>
+  </div>
+
+  <!-- Basic Modal -->
+  <div id="basic-modal"
+       class="fixed inset-0 bg-black/40 flex items-center justify-center px-4 z-40 hidden">
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl border border-slate-200 p-5 sm:p-6 relative">
+      <button data-modal-close
+              class="absolute top-3 right-3 p-1 rounded-full hover:bg-slate-100">
+        <svg class="w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M6 18L18 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </button>
+      <h3 class="text-lg font-semibold text-slate-900 mb-1">Basic Plan – ₹299/month</h3>
+      <p class="text-sm text-slate-600 mb-3">
+        Ideal for growing shops with regular daily billing and repeat customers.
+      </p>
+      <ul class="space-y-2 text-sm text-slate-700 mb-4">
+        <li>• Everything in Free Plan</li>
+        <li>• Unlimited invoices</li>
+        <li>• Customer history & outstanding tracking</li>
+        <li>• Product analytics & top-seller report</li>
+        <li>• Multi-device access (Owner + 1 staff)</li>
+        <li>• Priority email support</li>
+      </ul>
+      <button data-modal-close
+              class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-semibold bg-qbprimary text-white hover:bg-blue-600 transition-colors">
+        Choose Basic Plan
+      </button>
+    </div>
+  </div>
+
+  <!-- Advanced Modal -->
+  <div id="advanced-modal"
+       class="fixed inset-0 bg-black/40 flex items-center justify-center px-4 z-40 hidden">
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl border border-slate-200 p-5 sm:p-6 relative">
+      <button data-modal-close
+              class="absolute top-3 right-3 p-1 rounded-full hover:bg-slate-100">
+        <svg class="w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M6 18L18 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </button>
+      <h3 class="text-lg font-semibold text-slate-900 mb-1">Advanced Plan – ₹599/month</h3>
+      <p class="text-sm text-slate-600 mb-3">
+        Made for multi-counter, multi-staff shops, franchises and wholesalers.
+      </p>
+      <ul class="space-y-2 text-sm text-slate-700 mb-4">
+        <li>• Everything in Basic Plan</li>
+        <li>• Staff management with role-based access</li>
+        <li>• WhatsApp/SMS invoice integration</li>
+        <li>• Advanced dashboard & branch-wise reports</li>
+        <li>• Export invoices & reports as PDF/Excel</li>
+        <li>• Priority phone + WhatsApp support</li>
+      </ul>
+      <button data-modal-close
+              class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-semibold bg-qbprimary text-white hover:bg-blue-600 transition-colors">
+        Choose Advanced Plan
+      </button>
+    </div>
+  </div>
+
+  <!-- Minimal JavaScript for menu + modals -->
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Modal handling
+    const modalOpenButtons = document.querySelectorAll('[data-modal-target]');
+    const modalCloseButtons = document.querySelectorAll('[data-modal-close]');
+
+    modalOpenButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-modal-target');
+        const modal = document.getElementById(targetId);
+        if (modal) {
+          modal.classList.remove('hidden');
+        }
+      });
+    });
+
+    modalCloseButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const modal = btn.closest('[id$="-modal"]');
+        if (modal) {
+          modal.classList.add('hidden');
+        }
+      });
+    });
+
+    // Close modal when clicking backdrop
+    const modals = document.querySelectorAll('[id$="-modal"]');
+    modals.forEach((modal) => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
